@@ -1,5 +1,9 @@
 package com.btpl.plugins.ni;
 
+import android.graphics.Color;
+import android.os.Handler;
+import android.util.Log;
+
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
@@ -7,27 +11,48 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import io.ionic.starter.MainActivity;
+import payment.sdk.android.PaymentClient;
+import payment.sdk.android.cardpayment.CardPaymentRequest;
+
 /**
  * This class echoes a string called from JavaScript.
  */
-public class NetworkInternational extends CordovaPlugin {
+public class NetworkInternational extends CordovaPlugin implements PaymentCallback {
+    CallbackContext mCallbackContext;
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-
+        mCallbackContext = callbackContext;
         if (action.equals("makePayment")) {
-            String message = args.getString(0);
-            this.makePayment(message, callbackContext);
+            JSONObject jsonObject = args.getJSONObject(0);
+            String url = jsonObject.getString("url");
+            String code = jsonObject.getString("code");
+            this.makePayment(url, code, callbackContext);
             return true;
         }
         return false;
     }
 
-    private void makePayment(String message, CallbackContext callbackContext) {
-        if (message != null && message.length() > 0) {
-            callbackContext.success(message);
+    private void makePayment(String url, String code, CallbackContext callbackContext) {
+
+        if (url != null && url.length() > 0 && code != null && code.length() > 0) {
+            MainActivity mainActivity = new MainActivity();
+            mainActivity.payment(url, code, this);
         } else {
-            callbackContext.error("Expected one non-empty string argument.");
+            callbackContext.error("Expected url here");
         }
+    }
+
+    @Override
+    public void onSuccess() {
+        if (mCallbackContext != null)
+            mCallbackContext.success("success 1");
+    }
+
+    @Override
+    public void onFail() {
+        if (mCallbackContext != null)
+            mCallbackContext.error("error 1");
     }
 }
