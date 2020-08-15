@@ -1,0 +1,50 @@
+{
+  "_from": "git+https://github.com/mcanikhilprajapati/NetworkInternational.git",
+  "_id": "NetworkInternational@0.0.1",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/NetworkInternational",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/mcanikhilprajapati/NetworkInternational.git",
+    "rawSpec": "https://github.com/mcanikhilprajapati/NetworkInternational.git",
+    "saveSpec": "git+https://github.com/mcanikhilprajapati/NetworkInternational.git",
+    "fetchSpec": "https://github.com/mcanikhilprajapati/NetworkInternational.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "git+https://github.com/mcanikhilprajapati/NetworkInternational.git#c04e23552befba38b4875d431353be8524327be8",
+  "_spec": "https://github.com/mcanikhilprajapati/NetworkInternational.git",
+  "_where": "/Users/nikhil/Documents/other proj/network national/plugmandemo/true/testapp",
+  "author": {
+    "name": "Nikhil Prajapati"
+  },
+  "bugs": {
+    "url": "https://github.com/mcanikhilprajapati/NetworkInternational/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "com.btpl.plugins.ni",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "init",
+  "homepage": "https://github.com/mcanikhilprajapati/NetworkInternational#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "ISC",
+  "name": "NetworkInternational",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcanikhilprajapati/NetworkInternational.git"
+  },
+  "version": "0.0.1"
+}
