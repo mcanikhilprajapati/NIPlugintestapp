@@ -16,11 +16,16 @@ export class HomePage {
     }
 
     showAlert() {
-       // alert('test');
-        cordova.plugins.makePayment((data) => {
-            console.log(data);
+        const param = {
+            url: 'https://www.google.com',
+            code: '100'
+        };
+
+        cordova.plugins.makePayment(param, (data) => {
+            alert(data);
         }, (err) => {
             console.log(err);
+            alert(err);
         });
     }
 
