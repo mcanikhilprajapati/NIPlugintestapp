@@ -82,18 +82,6 @@ public class MainActivity extends CordovaActivity {
                 paymentCallback.onFail("Something went wrong");
             }
 
-//            if (cardPaymentData.getCode() == CardPaymentData.STATUS_PAYMENT_CAPTURED) {
-//
-//            }
-//            if (cardPaymentData.getCode() == CardPaymentData.STATUS_GENERIC_ERROR) {
-//
-//            }
-//            if (cardPaymentData.getCode() == CardPaymentData.STATUS_PAYMENT_AUTHORIZED) {
-//
-//            }
-//            if (cardPaymentData.getCode() == CardPaymentData.STATUS_PAYMENT_FAILED) {
-//
-//            }
             }
         }
     }
