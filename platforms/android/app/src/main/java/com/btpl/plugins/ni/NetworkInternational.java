@@ -45,14 +45,14 @@ public class NetworkInternational extends CordovaPlugin implements PaymentCallba
     }
 
     @Override
-    public void onSuccess() {
+    public void onSuccess(JSONObject  jsonObject) {
         if (mCallbackContext != null)
-            mCallbackContext.success("success 1");
+            mCallbackContext.success(jsonObject);
     }
 
     @Override
-    public void onFail() {
+    public void onFail(String data) {
         if (mCallbackContext != null)
-            mCallbackContext.error("error 1");
+            mCallbackContext.error(data);
     }
 }

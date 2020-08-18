@@ -28,8 +28,12 @@ import android.widget.Toast;
 import com.btpl.plugins.ni.PaymentCallback;
 
 import org.apache.cordova.*;
+import org.jetbrains.annotations.Nullable;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import payment.sdk.android.PaymentClient;
+import payment.sdk.android.cardpayment.CardPaymentData;
 import payment.sdk.android.cardpayment.CardPaymentRequest;
 
 public class MainActivity extends CordovaActivity {
@@ -62,12 +66,34 @@ public class MainActivity extends CordovaActivity {
         paymentClient.launchCardPayment(request, 2001);
     }
 
+
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        super.onActivityResult(requestCode, resultCode, intent);
-        if (requestCode == 2001 && resultCode == RESULT_OK)
-            paymentCallback.onSuccess();
-        else
-            paymentCallback.onFail();
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 2001 && resultCode == Activity.RESULT_OK) {
+            CardPaymentData cardPaymentData = data.getParcelableExtra("data");
+
+            JSONObject jsonObject = new JSONObject();
+            try {
+                jsonObject.put("code", cardPaymentData.getCode());
+                jsonObject.put("reason", cardPaymentData.getReason());
+                paymentCallback.onSuccess(jsonObject);
+            } catch (JSONException e) {
+                paymentCallback.onFail("Something went wrong");
+            }
+
+//            if (cardPaymentData.getCode() == CardPaymentData.STATUS_PAYMENT_CAPTURED) {
+//
+//            }
+//            if (cardPaymentData.getCode() == CardPaymentData.STATUS_GENERIC_ERROR) {
+//
+//            }
+//            if (cardPaymentData.getCode() == CardPaymentData.STATUS_PAYMENT_AUTHORIZED) {
+//
+//            }
+//            if (cardPaymentData.getCode() == CardPaymentData.STATUS_PAYMENT_FAILED) {
+//
+//            }
+            }
+        }
     }
-}

@@ -17,15 +17,15 @@ export class HomePage {
 
     showAlert() {
         const param = {
-            url: 'https://www.google.com',
-            code: '100'
+            url: 'https://api-gateway.sandbox.ngenius-payments.com/transactions/paymentAuthorization',
+            code: '4568aa4baef1f53a'
         };
 
         cordova.plugins.makePayment(param, (data) => {
-            alert(data);
+            alert(JSON.stringify(data));
         }, (err) => {
             console.log(err);
-            alert(err);
+            alert(JSON.stringify(err));
         });
     }
 

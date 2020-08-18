@@ -40,6 +40,7 @@
     "NetworkInternational": "git+https://github.com/mcanikhilprajapati/NetworkInternational.git",
     "codelyzer": "^5.1.2",
     "cordova-android": "^9.0.0",
+    "cordova-ios": "^6.1.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^4.2.1",
@@ -72,7 +73,8 @@
       "com.btpl.plugins.ni": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }

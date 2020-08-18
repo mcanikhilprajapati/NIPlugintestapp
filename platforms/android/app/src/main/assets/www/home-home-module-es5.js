@@ -219,14 +219,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "showAlert",
         value: function showAlert() {
           var param = {
-            url: 'https://www.google.com',
-            code: '100'
+            url: 'https://api-gateway.sandbox.ngenius-payments.com/transactions/paymentAuthorization',
+            code: '4568aa4baef1f53a'
           };
           cordova.plugins.makePayment(param, function (data) {
-            alert(data);
+            alert(JSON.stringify(data));
           }, function (err) {
             console.log(err);
-            alert(err);
+            alert(JSON.stringify(err));
           });
         }
       }]);

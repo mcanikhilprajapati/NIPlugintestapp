@@ -1,14 +1,6 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
   module.exports = [
     {
-      "id": "com.btpl.plugins.ni.NetworkInternational",
-      "file": "plugins/com.btpl.plugins.ni/www/NetworkInternational.js",
-      "pluginId": "com.btpl.plugins.ni",
-      "clobbers": [
-        "cordova.plugins"
-      ]
-    },
-    {
       "id": "cordova-plugin-device.device",
       "file": "plugins/cordova-plugin-device/www/device.js",
       "pluginId": "cordova-plugin-device",
@@ -47,15 +39,23 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "window.StatusBar"
       ]
+    },
+    {
+      "id": "com.btpl.plugins.ni.NetworkInternational",
+      "file": "plugins/com.btpl.plugins.ni/www/NetworkInternational.js",
+      "pluginId": "com.btpl.plugins.ni",
+      "clobbers": [
+        "cordova.plugins"
+      ]
     }
   ];
   module.exports.metadata = {
-    "com.btpl.plugins.ni": "0.0.1",
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-ionic-keyboard": "2.2.0",
     "cordova-plugin-ionic-webview": "4.2.1",
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "2.4.2",
-    "cordova-plugin-whitelist": "1.3.3"
+    "cordova-plugin-whitelist": "1.3.3",
+    "com.btpl.plugins.ni": "0.0.1"
   };
 });
