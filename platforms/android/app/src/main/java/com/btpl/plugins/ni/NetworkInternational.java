@@ -18,7 +18,7 @@ import payment.sdk.android.cardpayment.CardPaymentRequest;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class NetworkInternational extends CordovaPlugin implements PaymentCallback {
+public class NetworkInternational extends CordovaPlugin {
     CallbackContext mCallbackContext;
 
     @Override
@@ -38,21 +38,21 @@ public class NetworkInternational extends CordovaPlugin implements PaymentCallba
 
         if (url != null && url.length() > 0 && code != null && code.length() > 0) {
             MainActivity mainActivity = new MainActivity();
-            mainActivity.payment(url, code, this);
+            mainActivity.payment(url, code, new PaymentCallback() {
+                @Override
+                public void onSuccess(JSONObject jsonObject) {
+                    callbackContext.success(jsonObject);
+                }
+
+                @Override
+                public void onFail(String str) {
+                    callbackContext.error(str);
+                }
+            });
         } else {
             callbackContext.error("Expected url here");
         }
     }
 
-    @Override
-    public void onSuccess(JSONObject  jsonObject) {
-        if (mCallbackContext != null)
-            mCallbackContext.success(jsonObject);
-    }
 
-    @Override
-    public void onFail(String data) {
-        if (mCallbackContext != null)
-            mCallbackContext.error(data);
-    }
 }

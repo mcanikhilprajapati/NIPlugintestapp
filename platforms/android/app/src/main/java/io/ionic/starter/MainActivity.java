@@ -82,6 +82,8 @@ public class MainActivity extends CordovaActivity {
                 paymentCallback.onFail("Something went wrong");
             }
 
-            }
+        }else {
+            paymentCallback.onFail("User cancelled operation");
         }
     }
+}
