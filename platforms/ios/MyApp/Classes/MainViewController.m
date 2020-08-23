@@ -78,6 +78,8 @@
 }
 -(void)startPaymentProcess_iOS{
     NSLog(@"makePayment called");
+    
+    
 }
 @end
 
