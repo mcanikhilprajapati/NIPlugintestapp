@@ -18,12 +18,12 @@ import payment.sdk.android.cardpayment.CardPaymentRequest;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class NetworkInternational extends CordovaPlugin implements PaymentCallback {
-    CallbackContext mCallbackContext;
+public class NetworkInternational extends CordovaPlugin {
+
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        mCallbackContext = callbackContext;
+
         if (action.equals("makePayment")) {
             JSONObject jsonObject = args.getJSONObject(0);
             String url = jsonObject.getString("url");
@@ -34,25 +34,25 @@ public class NetworkInternational extends CordovaPlugin implements PaymentCallba
         return false;
     }
 
-    private void makePayment(String url, String code, CallbackContext callbackContext) {
+   private void makePayment(String url, String code, CallbackContext callbackContext) {
 
-        if (url != null && url.length() > 0 && code != null && code.length() > 0) {
-            MainActivity mainActivity = new MainActivity();
-            mainActivity.payment(url, code, this);
-        } else {
-            callbackContext.error("Expected url here");
-        }
-    }
+          if (url != null && url.length() > 0 && code != null && code.length() > 0) {
+              MainActivity mainActivity = new MainActivity();
+              mainActivity.payment(url, code, new PaymentCallback() {
+                  @Override
+                  public void onSuccess(JSONObject jsonObject) {
+                      callbackContext.success(jsonObject);
+                  }
 
-    @Override
-    public void onSuccess() {
-        if (mCallbackContext != null)
-            mCallbackContext.success("success 1");
-    }
+                  @Override
+                  public void onFail(String str) {
+                      callbackContext.error(str);
+                  }
+              });
+          } else {
+              callbackContext.error("Expected url here");
+          }
+      }
 
-    @Override
-    public void onFail() {
-        if (mCallbackContext != null)
-            mCallbackContext.error("error 1");
-    }
+
 }
