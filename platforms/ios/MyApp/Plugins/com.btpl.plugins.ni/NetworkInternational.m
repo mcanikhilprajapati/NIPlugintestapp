@@ -1,6 +1,7 @@
 /********* NetworkInternational.m Cordova Plugin Implementation *******/
 
 #import <Cordova/CDV.h>
+#import "MainViewController.h"
 
 @interface NetworkInternational : CDVPlugin {
   // Member variables go here.
@@ -15,7 +16,10 @@
 {
     CDVPluginResult* pluginResult = nil;
     NSString* echo = [command.arguments objectAtIndex:0];
-    NSLog(@"test");
+    NSLog(@"%@", echo);
+    MainViewController *vc = [[MainViewController alloc] init];
+    [vc startPaymentProcess_iOS];
+    
     //if (echo != nil && [echo length] > 0) {
 
        // pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];

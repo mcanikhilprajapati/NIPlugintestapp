@@ -76,7 +76,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
-
+-(void)startPaymentProcess_iOS{
+    NSLog(@"makePayment called");
+}
 @end
 
 @implementation MainCommandDelegate

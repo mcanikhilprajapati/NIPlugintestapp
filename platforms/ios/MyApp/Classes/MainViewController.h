@@ -30,7 +30,7 @@
 #import <Cordova/CDVCommandQueue.h>
 
 @interface MainViewController : CDVViewController
-
+-(void)startPaymentProcess_iOS;
 @end
 
 @interface MainCommandDelegate : CDVCommandDelegateImpl
