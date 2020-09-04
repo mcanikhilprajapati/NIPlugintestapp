@@ -28,9 +28,13 @@
 #import <Cordova/CDVViewController.h>
 #import <Cordova/CDVCommandDelegateImpl.h>
 #import <Cordova/CDVCommandQueue.h>
+#import <NISdk/NISdk-Swift.h>
+
+typedef void (^NIDSdkPaymentStatusFinalBlock) (enum PaymentStatus status);
 
 @interface MainViewController : CDVViewController
--(void)startPaymentProcess_iOS;
+
+-(void)startPaymentProcess_iOSWithOrderResponse:(NSData *)response WithCompletionBlock:(NIDSdkPaymentStatusFinalBlock)paymentStatusBlock;
 @end
 
 @interface MainCommandDelegate : CDVCommandDelegateImpl

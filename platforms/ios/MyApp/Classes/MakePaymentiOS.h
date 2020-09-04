@@ -15,7 +15,7 @@ typedef void (^NIDSdkPaymentStatusBlock) (enum PaymentStatus status);
 
 @interface MakePaymentiOS : UIViewController
 
-- (instancetype)initWithCreateOrderPaymentResponse:(NSDictionary *)orderResponseJSON withCompletionBlock:(NIDSdkPaymentStatusBlock)paymentStatusBlock;
+- (instancetype)initWithCreateOrderPaymentResponse:(NSData *)orderResponseData parent:(UIViewController *)parent withCompletionBlock:(NIDSdkPaymentStatusBlock)paymentStatusBlock;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -26,6 +26,11 @@
 //
 
 #import "MainViewController.h"
+#import "MakePaymentManager.h"
+#import "MakePaymentiOS.h"
+@interface MainViewController ()
+@property void (^NIDSdkPaymentStatusBlock) (enum PaymentStatus status);
+@end
 
 @implementation MainViewController
 
@@ -34,9 +39,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Uncomment to override the CDVCommandDelegateImpl used
-        // _commandDelegate = [[MainCommandDelegate alloc] initWithViewController:self];
+//         _commandDelegate = [[MainCommandDelegate alloc] initWithViewController:self];
         // Uncomment to override the CDVCommandQueue used
-        // _commandQueue = [[MainCommandQueue alloc] initWithViewController:self];
+//         _commandQueue = [[MainCommandQueue alloc] initWithViewController:self];
     }
     return self;
 }
@@ -76,9 +81,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
--(void)startPaymentProcess_iOS{
+-(void)startPaymentProcess_iOSWithOrderResponse:(NSData *)response WithCompletionBlock:(NIDSdkPaymentStatusFinalBlock)paymentStatusBlock{
     NSLog(@"makePayment called");
+    self.NIDSdkPaymentStatusBlock = paymentStatusBlock;
+    NSError *error;
+    OrderResponse *createOrderResponse = [OrderResponse decodeFromData: response error: &error];
+    if (error){
+        NSLog(@"error: %@",error);
+    }
+    NSLog(@"%@",[UIApplication sharedApplication].delegate.window.rootViewController);
+    UIViewController *vc = (UIViewController*)[UIApplication sharedApplication].keyWindow.rootViewController;
+    NSLog(@"%@",vc);
     
+    MakePaymentManager *manager = [[MakePaymentManager alloc] initWithCreateOrderPaymentResponse:createOrderResponse withCompletionBlock:^(enum PaymentStatus status) {
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            if (self.NIDSdkPaymentStatusBlock != nil){
+                self.NIDSdkPaymentStatusBlock(status);
+            }
+        });
+    }];
+    manager.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [vc presentViewController:manager animated: YES completion: nil];
     
 }
 @end

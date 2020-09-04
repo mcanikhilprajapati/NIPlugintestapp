@@ -17,9 +17,9 @@
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
 		3072F8A16DD24A0AABFC47B0 /* CDVWKWebViewUIDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AF419D41DB43EEAD9164D8 /* CDVWKWebViewUIDelegate.m */; };
+		3157A92B25015A3A00E64D20 /* MakePaymentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3157A92A25015A3A00E64D20 /* MakePaymentManager.m */; };
 		31ADB21924F2A30800639257 /* NISdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31ADB21824F2A30800639257 /* NISdk.framework */; };
 		31ADB21A24F2A30800639257 /* NISdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31ADB21824F2A30800639257 /* NISdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		31ADB21F24F2A5A400639257 /* MakePaymentiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ADB21E24F2A5A400639257 /* MakePaymentiOS.m */; };
 		49C906FC3C994903BC293CD8 /* CDVWKProcessPoolFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C9B4D8CF1B4983A2ED20AD /* CDVWKProcessPoolFactory.m */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
 		A8112B2AB6584181B35EAD8B /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EA400DA195A84B86A87E5E47 /* CDVStatusBar.m */; };
@@ -84,9 +84,9 @@
 		3047A50F1AB8059700498E2A /* build-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-debug.xcconfig"; path = "cordova/build-debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 		3047A5101AB8059700498E2A /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-release.xcconfig"; path = "cordova/build-release.xcconfig"; sourceTree = SOURCE_ROOT; };
 		3047A5111AB8059700498E2A /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = build.xcconfig; path = cordova/build.xcconfig; sourceTree = SOURCE_ROOT; };
+		3157A92925015A3A00E64D20 /* MakePaymentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakePaymentManager.h; sourceTree = "<group>"; };
+		3157A92A25015A3A00E64D20 /* MakePaymentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakePaymentManager.m; sourceTree = "<group>"; };
 		31ADB21824F2A30800639257 /* NISdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NISdk.framework; path = Carthage/Build/iOS/NISdk.framework; sourceTree = "<group>"; };
-		31ADB21D24F2A5A400639257 /* MakePaymentiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MakePaymentiOS.h; path = ../../../../../../../../Payment/Payment/MakePaymentiOS.h; sourceTree = "<group>"; };
-		31ADB21E24F2A5A400639257 /* MakePaymentiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MakePaymentiOS.m; path = ../../../../../../../../Payment/Payment/MakePaymentiOS.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* MyApp-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MyApp-Prefix.pch"; sourceTree = "<group>"; };
 		3563E23A1617473B9ED43392 /* CDVDevice.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVDevice.m; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; };
 		48CA694A53B449F9BB4E33CC /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; };
@@ -133,8 +133,8 @@
 			children = (
 				302D95EE14D2391D003F00A1 /* MainViewController.h */,
 				302D95EF14D2391D003F00A1 /* MainViewController.m */,
-				31ADB21D24F2A5A400639257 /* MakePaymentiOS.h */,
-				31ADB21E24F2A5A400639257 /* MakePaymentiOS.m */,
+				3157A92925015A3A00E64D20 /* MakePaymentManager.h */,
+				3157A92A25015A3A00E64D20 /* MakePaymentManager.m */,
 				302D95F014D2391D003F00A1 /* MainViewController.xib */,
 				1D3623240D0F684500981E51 /* AppDelegate.h */,
 				1D3623250D0F684500981E51 /* AppDelegate.m */,
@@ -388,11 +388,11 @@
 				B3467E33506B49E488F82CF2 /* NetworkInternational.m in Sources */,
 				CEB76DDAF802493FB33D1CBD /* CDVDevice.m in Sources */,
 				AF7916B6848F42D5AFCE90D4 /* CDVIonicKeyboard.m in Sources */,
-				31ADB21F24F2A5A400639257 /* MakePaymentiOS.m in Sources */,
 				AD58CF8F388F4BE4A838EBFB /* CDVWKWebViewEngine.m in Sources */,
 				3072F8A16DD24A0AABFC47B0 /* CDVWKWebViewUIDelegate.m in Sources */,
 				49C906FC3C994903BC293CD8 /* CDVWKProcessPoolFactory.m in Sources */,
 				D5F25DF333A842F8883EC8F3 /* IONAssetHandler.m in Sources */,
+				3157A92B25015A3A00E64D20 /* MakePaymentManager.m in Sources */,
 				18780DD20097427AB09EC2EA /* CDVSplashScreen.m in Sources */,
 				095998E18FA44F9D87079317 /* CDVViewController+SplashScreen.m in Sources */,
 				A8112B2AB6584181B35EAD8B /* CDVStatusBar.m in Sources */,

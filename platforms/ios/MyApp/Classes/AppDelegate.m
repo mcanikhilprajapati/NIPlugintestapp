@@ -29,11 +29,17 @@
 #import "MainViewController.h"
 
 @implementation AppDelegate
-
+@synthesize window;
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
-    self.viewController = [[MainViewController alloc] init];
     return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
+- (void)applicationDidFinishLaunching:(UIApplication *)application{
+    window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.viewController = [[MainViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    [window setRootViewController:nav];
+    [window makeKeyAndVisible];
+}
 @end
