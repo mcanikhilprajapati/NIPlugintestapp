@@ -29,5 +29,5 @@
 #import <Cordova/CDVAppDelegate.h>
 
 @interface AppDelegate : CDVAppDelegate {}
-
+@property (nonatomic, strong) UIWindow *window;
 @end

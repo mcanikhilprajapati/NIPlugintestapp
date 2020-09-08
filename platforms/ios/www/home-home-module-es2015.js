@@ -124,22 +124,22 @@ let HomePage = class HomePage {
     }
     showAlert() {
         const param = {
-            "_id": "urn:order:d9e45497-9a76-4fd5-8a48-c139fe43c853",
+            "_id": "urn:order:e7dd3962-f3af-43f8-887e-763feecc729e",
             "_links": {
                 "cnp:payment-link": {
-                    "href": "https://api-gateway.sandbox.ngenius-payments.com/transactions/outlets/445d36dc-2cca-4179-837a-cc4000f701d3/orders/d9e45497-9a76-4fd5-8a48-c139fe43c853/payment-link"
+                    "href": "https://api-gateway.sandbox.ngenius-payments.com/transactions/outlets/445d36dc-2cca-4179-837a-cc4000f701d3/orders/e7dd3962-f3af-43f8-887e-763feecc729e/payment-link"
                 },
                 "payment-authorization": {
                     "href": "https://api-gateway.sandbox.ngenius-payments.com/transactions/paymentAuthorization"
                 },
                 "self": {
-                    "href": "https://api-gateway.sandbox.ngenius-payments.com/transactions/outlets/445d36dc-2cca-4179-837a-cc4000f701d3/orders/d9e45497-9a76-4fd5-8a48-c139fe43c853"
+                    "href": "https://api-gateway.sandbox.ngenius-payments.com/transactions/outlets/445d36dc-2cca-4179-837a-cc4000f701d3/orders/e7dd3962-f3af-43f8-887e-763feecc729e"
                 },
                 "tenant-brand": {
                     "href": "http://config-service/config/outlets/445d36dc-2cca-4179-837a-cc4000f701d3/configs/tenant-brand"
                 },
                 "payment": {
-                    "href": "https://paypage.sandbox.ngenius-payments.com/?code=5a6f1a1857771e12"
+                    "href": "https://paypage.sandbox.ngenius-payments.com/?code=b9761f8abb5fc686"
                 },
                 "merchant-brand": {
                     "href": "http://config-service/config/outlets/445d36dc-2cca-4179-837a-cc4000f701d3/configs/merchant-brand"
@@ -154,9 +154,9 @@ let HomePage = class HomePage {
             },
             "language": "en",
             "merchantAttributes": {},
-            "reference": "d9e45497-9a76-4fd5-8a48-c139fe43c853",
+            "reference": "e7dd3962-f3af-43f8-887e-763feecc729e",
             "outletId": "445d36dc-2cca-4179-837a-cc4000f701d3",
-            "createDateTime": "2020-09-03T17:31:18.769Z",
+            "createDateTime": "2020-09-08T16:33:14.802Z",
             "paymentMethods": {
                 "card": [
                     "VISA",
@@ -166,23 +166,23 @@ let HomePage = class HomePage {
                     "DISCOVER"
                 ]
             },
-            "referrer": "urn:Ecom:d9e45497-9a76-4fd5-8a48-c139fe43c853",
+            "referrer": "urn:Ecom:e7dd3962-f3af-43f8-887e-763feecc729e",
             "merchantOrderReference": "SO-0002",
             "formattedAmount": "د.إ.‏ 50",
             "formattedOrderSummary": {},
             "_embedded": {
                 "payment": [
                     {
-                        "_id": "urn:payment:b980fac1-4132-40d6-b49d-c3cac79b1764",
+                        "_id": "urn:payment:d975d866-1af3-44c6-8296-807eb9791b2c",
                         "_links": {
                             "self": {
-                                "href": "https://api-gateway.sandbox.ngenius-payments.com/transactions/outlets/445d36dc-2cca-4179-837a-cc4000f701d3/orders/d9e45497-9a76-4fd5-8a48-c139fe43c853/payments/b980fac1-4132-40d6-b49d-c3cac79b1764"
+                                "href": "https://api-gateway.sandbox.ngenius-payments.com/transactions/outlets/445d36dc-2cca-4179-837a-cc4000f701d3/orders/e7dd3962-f3af-43f8-887e-763feecc729e/payments/d975d866-1af3-44c6-8296-807eb9791b2c"
                             },
                             "payment:card": {
-                                "href": "https://api-gateway.sandbox.ngenius-payments.com/transactions/outlets/445d36dc-2cca-4179-837a-cc4000f701d3/orders/d9e45497-9a76-4fd5-8a48-c139fe43c853/payments/b980fac1-4132-40d6-b49d-c3cac79b1764/card"
+                                "href": "https://api-gateway.sandbox.ngenius-payments.com/transactions/outlets/445d36dc-2cca-4179-837a-cc4000f701d3/orders/e7dd3962-f3af-43f8-887e-763feecc729e/payments/d975d866-1af3-44c6-8296-807eb9791b2c/card"
                             },
                             "payment:saved-card": {
-                                "href": "https://api-gateway.sandbox.ngenius-payments.com/transactions/outlets/445d36dc-2cca-4179-837a-cc4000f701d3/orders/d9e45497-9a76-4fd5-8a48-c139fe43c853/payments/b980fac1-4132-40d6-b49d-c3cac79b1764/saved-card"
+                                "href": "https://api-gateway.sandbox.ngenius-payments.com/transactions/outlets/445d36dc-2cca-4179-837a-cc4000f701d3/orders/e7dd3962-f3af-43f8-887e-763feecc729e/payments/d975d866-1af3-44c6-8296-807eb9791b2c/saved-card"
                             },
                             "curies": [
                                 {
@@ -197,9 +197,9 @@ let HomePage = class HomePage {
                             "currencyCode": "AED",
                             "value": 5000
                         },
-                        "updateDateTime": "2020-09-03T17:31:18.769Z",
+                        "updateDateTime": "2020-09-08T16:33:14.802Z",
                         "outletId": "445d36dc-2cca-4179-837a-cc4000f701d3",
-                        "orderReference": "d9e45497-9a76-4fd5-8a48-c139fe43c853",
+                        "orderReference": "e7dd3962-f3af-43f8-887e-763feecc729e",
                         "merchantOrderReference": "SO-0002"
                     }
                 ]

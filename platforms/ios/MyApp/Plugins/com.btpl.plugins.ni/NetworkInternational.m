@@ -37,7 +37,7 @@
             paymentStatus = @"Payment Aborted";
             NSLog(@"***Payment Aborted***");
         }
-        pluginResult = [CDVPluginResult resultWithStatus:status messageAsDictionary:@{@"code" : @(status), @"reason" : paymentStatus}];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:@{@"code" : @(status), @"reason" : paymentStatus}];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }];
     
